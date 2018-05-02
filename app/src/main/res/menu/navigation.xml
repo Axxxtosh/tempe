@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_home"
+            android:icon="@drawable/house"
+
+            android:title="@string/title_home" />
+
+        <item
+            android:id="@+id/navigation_dashboard"
+            android:icon="@drawable/house"
+            android:title="Courses" />
+
+        <item
+            android:id="@+id/navigation_notifications"
+            android:icon="@drawable/house"
+            android:title="Notifications" />
+    </group>
+
+
+</menu>
