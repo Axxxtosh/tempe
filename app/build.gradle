@@ -71,4 +71,10 @@ dependencies {
 
     //Progress
     compile 'com.eyalbira.loadingdots:loading-dots:1.0.2'
+
+     //Slider
+
+    implementation 'com.squareup.picasso:picasso:2.3.2'
+    implementation 'com.nineoldandroids:library:2.4.0'
+    implementation 'com.daimajia.slider:library:1.1.5@aar'
 }

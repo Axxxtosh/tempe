@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.content.res.Configuration;
 
+import com.uriahsolution.homecare.BuildConfig;
+
 import timber.log.Timber;
 
 
