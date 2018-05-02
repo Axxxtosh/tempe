@@ -29,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
+        setSlider();
+
     }
     private void setSlider() {
         url_maps= new HashMap<String, String>();
@@ -41,22 +43,23 @@ public class MainActivity extends AppCompatActivity {
 
         mDemoSlider.removeAllSliders();
         for(String name : url_maps.keySet()){
-            TextSliderView textSliderView = new TextSliderView(this);
+            BaseSliderView textSliderView = new TextSliderView(this);
             // initialize a SliderLayout
             textSliderView
 
                     .image(url_maps.get(name))
-
                     .setScaleType(BaseSliderView.ScaleType.Fit);
 
 
             //add your extra information
-            textSliderView.bundle(new Bundle());
+
             /*textSliderView.getBundle()
                     .putString("extra",name);*/
 
             mDemoSlider.addSlider(textSliderView);
+
         }
+
         mDemoSlider.startAutoCycle();
     }
 

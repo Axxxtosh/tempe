@@ -10,5 +10,4 @@ public class LoginPresenter implements LoginContract.Presenter {
         this.mLoginView=mLoginView;
     }
 
-
 }
