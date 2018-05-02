@@ -12,25 +12,45 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-        <android.support.design.widget.AppBarLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
-
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
+            android:background="@color/colorPrimary"
+            android:orientation="vertical">
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="?attr/colorPrimary"
-                app:popupTheme="@style/AppTheme.PopupOverlay" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:fontFamily="@font/cabin"
+                android:textColor="@color/colorWhite"
+                android:text="Smart Home"/>
+            <android.support.v7.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_marginBottom="16dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginLeft="8dp"
+                app:queryHint="Search for a service"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite">
+            </android.support.v7.widget.SearchView>
 
-        </android.support.design.widget.AppBarLayout>
 
-
-        <com.daimajia.slider.library.SliderLayout
-            android:id="@+id/slider"
+        </LinearLayout>
+        <!--first slider-->
+        <TextView
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/cabin"
+            android:text="Recommended Service"/>
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider1"
+            android:layout_width="wrap_content"
+            android:layout_height="150dp"
+            android:layout_margin="16dp"
             android:contentDescription="">
 
         </com.daimajia.slider.library.SliderLayout>
@@ -42,24 +62,29 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
+            android:background="@color/colorLightGrey"
             android:orientation="horizontal"
             android:weightSum="3"
             tools:layout_editor_absoluteX="8dp"
             tools:layout_editor_absoluteY="78dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginRight="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/student" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -70,46 +95,54 @@
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
+                android:background="@color/colorWhite"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+               >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/calendar" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cabin"
-                    android:text="Attendance" />
+                    android:text="My Profile" />
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/homework" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cabin"
-                    android:text="Homework" />
+                    android:text="My Profile" />
 
             </LinearLayout>
 
@@ -119,74 +152,88 @@
             android:id="@+id/linearLayout3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:background="@color/colorLightGrey"
             android:gravity="center"
             android:orientation="horizontal"
             android:weightSum="3"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/result" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/cabin"
-                    android:text="Result" />
+                    android:text="My Profile" />
 
             </LinearLayout>
-
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/lib" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-                    android:text="Library" />
+                    android:fontFamily="@font/cabin"
+                    android:text="My Profile" />
 
             </LinearLayout>
-
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/homework_" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Hostel" />
+                    android:fontFamily="@font/cabin"
+                    android:text="My Profile" />
 
             </LinearLayout>
 
@@ -196,6 +243,7 @@
             android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@color/colorLightGrey"
             android:gravity="center_horizontal|center"
             android:orientation="horizontal"
             android:weightSum="3"
@@ -203,73 +251,145 @@
             tools:layout_editor_absoluteY="171dp">
 
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginBottom="0.5dp"
+                android:layout_marginRight="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/circular" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Circular" />
+                    android:fontFamily="@font/cabin"
+                    android:text="My Profile" />
 
             </LinearLayout>
-
             <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
+                android:layout_marginBottom="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/remarks" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Remarks" />
+                    android:fontFamily="@font/cabin"
+                    android:text="My Profile" />
 
             </LinearLayout>
-
             <LinearLayout
-                android:id="@+id/timetable_ll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/colorWhite"
+                android:padding="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/ripple_ll"
-                android:clickable="true"
-                android:focusable="true"
+                android:layout_marginTop="0.5dp"
+                android:layout_marginEnd="0.5dp"
+                android:layout_marginRight="0.5dp"
+                android:layout_marginBottom="0.5dp"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                >
 
                 <ImageView
 
                     android:layout_width="50dp"
                     android:layout_height="50dp"
-                    app:srcCompat="@drawable/lib" />
+                    app:srcCompat="@drawable/house" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Timetable" />
+                    android:fontFamily="@font/cabin"
+                    android:text="My Profile" />
 
             </LinearLayout>
 
         </LinearLayout>
+
+        <!--second slider-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:textSize="15sp"
+            android:fontFamily="@font/cabin"
+            android:text="Recommended Service"/>
+        <com.daimajia.slider.library.SliderLayout
+            android:id="@+id/slider2"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:contentDescription="">
+
+        </com.daimajia.slider.library.SliderLayout>
+
+       <!-- horizontal one-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/videos_ll"
+            android:orientation="horizontal"
+            android:layout_marginTop="2dp"
+            android:layout_height="wrap_content">
+            <TextView
+                android:fontFamily="@font/cabin"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_weight="1"
+                android:layout_marginStart="10dp"
+                android:text="Service"
+
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp" />
+            <TextView
+                android:id="@+id/tv_more"
+                android:fontFamily="@font/cabin"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:clickable="true"
+                android:layout_width="wrap_content"
+                android:textColor="@color/colorPrimaryDark"
+                android:layout_marginEnd="10dp"
+                android:text="More"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp" />
+
+        </LinearLayout>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </android.support.v7.widget.RecyclerView>
+
+
+
     </LinearLayout>
 
 
