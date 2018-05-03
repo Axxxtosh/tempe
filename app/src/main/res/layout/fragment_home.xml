@@ -106,7 +106,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-               >
+                >
 
                 <ImageView
 
@@ -352,7 +352,7 @@
 
         </com.daimajia.slider.library.SliderLayout>
 
-       <!-- horizontal one-->
+        <!-- horizontal one-->
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/videos_ll"

@@ -1,12 +1,14 @@
 package com.uriahsolution.homecare.ui.main;
 
-
+import android.content.Context;
+import android.net.Uri;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
-
+import android.view.ViewGroup;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
@@ -19,7 +21,14 @@ import java.util.HashMap;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainActivity extends AppCompatActivity {
+
+public class HomeFragment extends Fragment {
+
+
+
+    public HomeFragment() {
+        // Required empty public constructor
+    }
 
 
     AdapterOne adapterOne;
@@ -28,27 +37,32 @@ public class MainActivity extends AppCompatActivity {
     SliderLayout mDemoSlider1;
     @BindView(R.id.slider2)
     SliderLayout mDemoSlider2;
-
     //recycler view
     @BindView(R.id.rv_1)
     RecyclerView rv_1;
+    View view;
+
+
 
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view=inflater.inflate(R.layout.fragment_home, container, false);
+
+        ButterKnife.bind(this,view);
 
         setSlider();
 
         setRecycler();
 
-    }
 
+
+        return  view;
+    }
     private void setRecycler() {
-       adapterOne=new AdapterOne(getBaseContext());
-        rv_1.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, true));
+        adapterOne=new AdapterOne(getActivity());
+        rv_1.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true));
         rv_1.setAdapter(adapterOne);
         rv_1.setVisibility(View.VISIBLE);
         rv_1.postDelayed(new Runnable() {
@@ -72,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         mDemoSlider1.removeAllSliders();
         mDemoSlider2.removeAllSliders();
         for(String name : url_maps.keySet()){
-            BaseSliderView textSliderView = new TextSliderView(this);
+            BaseSliderView textSliderView = new TextSliderView(getActivity());
             // initialize a SliderLayout
             textSliderView
 
@@ -94,5 +108,6 @@ public class MainActivity extends AppCompatActivity {
         mDemoSlider1.startAutoCycle();
         mDemoSlider2.startAutoCycle();
     }
+
 
 }

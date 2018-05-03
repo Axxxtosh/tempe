@@ -3,12 +3,13 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 27
     defaultConfig {
-        applicationId "com.uriah.smarthomecare"
+        applicationId "com.uriahsolution.homecare"
         minSdkVersion 16
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
     }
     buildTypes {
         release {
@@ -31,6 +32,7 @@ dependencies {
     implementation 'com.android.support:cardview-v7:27.1.0'
 
     //test
+    implementation 'com.android.support:support-vector-drawable:27.1.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
