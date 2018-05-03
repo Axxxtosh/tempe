@@ -16,6 +16,7 @@ public class TimeTableActivity extends AppCompatActivity {
 
     @BindView(R.id.tabs)
     TabLayout tabLayout;
+
     @BindView(R.id.toolbar)
     android.support.v7.widget.Toolbar toolbar;
     @BindView(R.id.viewpager)
