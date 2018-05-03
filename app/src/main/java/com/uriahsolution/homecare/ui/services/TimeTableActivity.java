@@ -1,4 +1,4 @@
-package com.uriahsolution.homecare.ui.timetable;
+package com.uriahsolution.homecare.ui.services;
 
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -43,12 +43,12 @@ public class TimeTableActivity extends AppCompatActivity {
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BlankFragment(), "Beauty");
-        adapter.addFragment(new BlankFragment(), "TUE");
-        adapter.addFragment(new BlankFragment(), "WED");
-        adapter.addFragment(new BlankFragment(), "THU");
-        adapter.addFragment(new BlankFragment(), "FRI");
-        adapter.addFragment(new BlankFragment(), "SAT");
-        adapter.addFragment(new BlankFragment(), "SUN");
+        adapter.addFragment(new BlankFragment(), "Electronics ");
+        adapter.addFragment(new BlankFragment(), "Home Cleaning");
+        adapter.addFragment(new BlankFragment(), "Business & Taxes");
+        adapter.addFragment(new BlankFragment(), "Health & fitness");
+        adapter.addFragment(new BlankFragment(), "Tutors & Lessons");
+        adapter.addFragment(new BlankFragment(), "MOving Homes");
         viewPager.setAdapter(adapter);
     }
 

@@ -1,8 +1,6 @@
 package com.uriahsolution.homecare.ui.main;
 
-import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -17,7 +15,7 @@ import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.uriahsolution.homecare.R;
 import com.uriahsolution.homecare.ui.main.adapter.AdapterOne;
-import com.uriahsolution.homecare.ui.timetable.TimeTableActivity;
+import com.uriahsolution.homecare.ui.services.TimeTableActivity;
 
 import java.util.HashMap;
 
@@ -106,7 +104,7 @@ public class HomeFragment extends Fragment {
             textSliderView
 
                     .image(url_maps.get(name))
-                    .setScaleType(BaseSliderView.ScaleType.FitCenterCrop);
+                    .setScaleType(BaseSliderView.ScaleType.Fit);
 
 
             //add your extra information
