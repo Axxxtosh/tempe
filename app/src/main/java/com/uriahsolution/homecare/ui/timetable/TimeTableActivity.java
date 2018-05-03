@@ -35,12 +35,14 @@ public class TimeTableActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupViewPager(viewPager);
+        //Select category
+        viewPager.setCurrentItem(3);
         tabLayout.setupWithViewPager(viewPager);
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new BlankFragment(), "MON");
+        adapter.addFragment(new BlankFragment(), "Beauty");
         adapter.addFragment(new BlankFragment(), "TUE");
         adapter.addFragment(new BlankFragment(), "WED");
         adapter.addFragment(new BlankFragment(), "THU");
@@ -48,5 +50,12 @@ public class TimeTableActivity extends AppCompatActivity {
         adapter.addFragment(new BlankFragment(), "SAT");
         adapter.addFragment(new BlankFragment(), "SUN");
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public boolean onNavigateUp() {
+        finish();
+        return super.onNavigateUp();
+
     }
 }

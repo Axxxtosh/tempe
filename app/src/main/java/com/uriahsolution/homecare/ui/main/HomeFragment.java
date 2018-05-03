@@ -1,6 +1,7 @@
 package com.uriahsolution.homecare.ui.main;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,12 +10,14 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 
 import com.daimajia.slider.library.SliderLayout;
 import com.daimajia.slider.library.SliderTypes.BaseSliderView;
 import com.daimajia.slider.library.SliderTypes.TextSliderView;
 import com.uriahsolution.homecare.R;
 import com.uriahsolution.homecare.ui.main.adapter.AdapterOne;
+import com.uriahsolution.homecare.ui.timetable.TimeTableActivity;
 
 import java.util.HashMap;
 
@@ -41,6 +44,8 @@ public class HomeFragment extends Fragment {
     @BindView(R.id.rv_1)
     RecyclerView rv_1;
     View view;
+    @BindView(R.id.ll_test)
+    LinearLayout ll;
 
 
 
@@ -55,6 +60,15 @@ public class HomeFragment extends Fragment {
         setSlider();
 
         setRecycler();
+        ll.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent(getActivity(), TimeTableActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
 
@@ -65,6 +79,7 @@ public class HomeFragment extends Fragment {
         rv_1.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, true));
         rv_1.setAdapter(adapterOne);
         rv_1.setVisibility(View.VISIBLE);
+
         rv_1.postDelayed(new Runnable() {
             @Override
             public void run() {
