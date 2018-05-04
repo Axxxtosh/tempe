@@ -2,11 +2,17 @@ package com.uriahsolution.homecare.ui.services;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
 import com.uriahsolution.homecare.R;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 /**
  * Created by Ashet on 08-02-2018.
@@ -33,6 +39,16 @@ public class BlankAdapter extends RecyclerView.Adapter<BlankAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
 
+        holder.ll_service.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent=new Intent (ctx,ServiceDescActivity.class);
+
+                ctx.startActivity(intent);
+            }
+        });
+
         }
 
     @Override
@@ -44,13 +60,19 @@ public class BlankAdapter extends RecyclerView.Adapter<BlankAdapter.ViewHolder> 
 
     {
 
+        @BindView(R.id.ll_service)
+        LinearLayout ll_service;
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            ButterKnife.bind(this,itemView);
         }
 
         @Override
         public void onClick(View v) {
+
+
 
         }
     }

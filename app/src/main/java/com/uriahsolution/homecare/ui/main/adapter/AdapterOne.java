@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.uriahsolution.homecare.R;
 
+import butterknife.ButterKnife;
+
 /**
  * Created by Ashet on 08-02-2018.
  */
@@ -57,6 +59,7 @@ public class AdapterOne extends RecyclerView.Adapter<AdapterOne.ViewHolder> {
 
         public ViewHolder(View itemView) {
             super(itemView);
+            ButterKnife.bind(this,itemView);
         }
 
         @Override

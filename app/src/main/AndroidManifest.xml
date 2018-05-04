@@ -13,7 +13,6 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-
         <activity
             android:name=".ui.main.HomeActivity"
             android:label="@string/title_activity_home">
@@ -23,8 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".ui.services.TimeTableActivity"></activity>
+        <activity android:name=".ui.services.TimeTableActivity" />
+        <activity
+            android:name=".ui.services.ServiceDescActivity"
+            android:label="@string/title_activity_service_desc_activty"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>
