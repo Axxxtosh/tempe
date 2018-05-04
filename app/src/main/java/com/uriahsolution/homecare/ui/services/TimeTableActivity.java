@@ -4,6 +4,7 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 
 
 import com.uriahsolution.homecare.R;
@@ -27,28 +28,26 @@ public class TimeTableActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_time_table);
-
         ButterKnife.bind(this);
-
-
-
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         setupViewPager(viewPager);
         //Select category
         viewPager.setCurrentItem(3);
         tabLayout.setupWithViewPager(viewPager);
+
+
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.addFragment(new BlankFragment(), "Beauty");
-        adapter.addFragment(new BlankFragment(), "Electronics ");
-        adapter.addFragment(new BlankFragment(), "Home Cleaning");
+        adapter.addFragment(new BlankFragment(), "Electronics");
+        adapter.addFragment(new BlankFragment(), "Home cleaning");
         adapter.addFragment(new BlankFragment(), "Business & Taxes");
         adapter.addFragment(new BlankFragment(), "Health & fitness");
-        adapter.addFragment(new BlankFragment(), "Tutors & Lessons");
-        adapter.addFragment(new BlankFragment(), "MOving Homes");
+        adapter.addFragment(new BlankFragment(), "Tutors & lessons");
+        adapter.addFragment(new BlankFragment(), "Moving homes");
         viewPager.setAdapter(adapter);
     }
 
@@ -57,5 +56,15 @@ public class TimeTableActivity extends AppCompatActivity {
         finish();
         return super.onNavigateUp();
 
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }

@@ -44,7 +44,6 @@ public class BlankAdapter extends RecyclerView.Adapter<BlankAdapter.ViewHolder> 
             public void onClick(View v) {
 
                 Intent intent=new Intent (ctx,ServiceDescActivity.class);
-
                 ctx.startActivity(intent);
             }
         });
